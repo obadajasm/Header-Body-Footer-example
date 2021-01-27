@@ -6,20 +6,35 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
+          SliverAppBar(
+              expandedHeight: 100.0,
+              floating: true,
+              pinned: false,
+              snap: false,
+              flexibleSpace: const FlexibleSpaceBar(
+                title: Text('Available seats'),
+              ),
+              actions: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.add_circle),
+                  tooltip: 'Add new entry',
+                  onPressed: () {},
+                ),
+              ]),
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                Container(
-                  width: double.infinity,
-                  height: 50,
-                  color: Colors.orangeAccent,
-                  child: Center(
-                    child: Text(
-                      'Header',
-                      style: TextStyle(color: Colors.white, letterSpacing: 4),
-                    ),
-                  ),
-                ),
+                // Container(
+                //   width: double.infinity,
+                //   height: 50,
+                //   color: Colors.orangeAccent,
+                //   child: Center(
+                //     child: Text(
+                //       'Header',
+                //       style: TextStyle(color: Colors.white, letterSpacing: 4),
+                //     ),
+                //   ),
+                // ),
                 ListView.builder(
                   shrinkWrap: true,
                   itemCount: 100,
